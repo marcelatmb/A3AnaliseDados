@@ -160,7 +160,7 @@ except Exception as e:
 # ==============================================================================
 st.sidebar.title("📌 Projeto A3 - UNIFACS")
 st.sidebar.markdown("**UC:** Análise de Dados | **Professor:** Xavier")
-st.sidebar.markdown("**Alunos:** Marcela Tourinho, Maria Clara Maluf, Isadora")
+st.sidebar.markdown("**Alunos:** Marcela Tourinho, Maria Clara Maluf, Isadora Lopes, João Luiz Nunes, Ana Priscilla Oliveira")
 st.sidebar.markdown("---")
 fase_selecionada = st.sidebar.radio("Selecione a Etapa do Projeto:", [
     "🏠 Visão Geral & Contexto de Negócio",
