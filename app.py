@@ -215,7 +215,7 @@ if fase_selecionada == "🏠 Visão Geral & Contexto de Negócio":
         ### 🏭 Quais públicos mais dependem destes hardwares?
         1. **Enterprise & Desenvolvedores:** Estações de trabalho profissionais (*Workstations*) focadas em Inteligência Artificial, renderização e processamento massivo de dados.
         2. **Setores de Engenharia, Arquitetura e Design:** Dependem de forte poder computacional gráfico (GPUs de alta performance).
-        3. **Mercado Pro-Gamer e Entusiastas:** Um niche de consumo de altíssimo valor agregado com alta resiliência a aumentos de preços.
+        3. **Mercado Pro-Gamer e Entusiastas:** Um nicho de consumo de altíssimo valor adequado com alta resiliência a aumentos de preços.
         """)
 
 # ==============================================================================
@@ -234,7 +234,8 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
 
     with tab_estatistica:
         st.markdown("#### Métricas de Tendência Central e Dispersão por Categoria")
-        st.markdown("> **Técnica Utilizada:** Agrupamento estatístico computando Média, Mediana, Quartis ($25\%$ e $75\%$) e Desvio Padrão para avaliar o espalhamento dos preços reais praticados.")
+        # Modificado para Raw String (r"...") para sumir com o SyntaxWarning do terminal
+        st.markdown(r"> **Técnica Utilizada:** Agrupamento estatístico computando Média, Mediana, Quartis ($25\%$ e $75\%$) e Desvio Padrão para avaliar o espalhamento dos preços reais praticados.")
         
         # Tabela Descritiva Resumida
         df_descritiva = df_filtrado.groupby('Categoria')['Preco_Medio_BRL_Mes'].agg([
@@ -247,7 +248,7 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
         
         st.dataframe(df_descritiva, use_container_width=True)
         
-        # Gráfico Box Plot / Strip Plot Lado a Lado (Convertido do seu Script Original)
+        # Gráfico Box Plot / Strip Plot Lado a Lado
         cores_faixas = {"Premium": "#636EFA", "Intermediário": "#00CC96", "Baixo custo": "#EF553B"}
         
         fig_lado_a_lado = make_subplots(
@@ -331,7 +332,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
     </div>
     """, unsafe_allow_html=True)
     
-    # Seletor interativo dinâmico trazido do seu script (Melhoria de UI/UX profissional)
+    # Seletor interativo dinâmico trazido do seu script
     st.markdown("### 🔍 Simulador Dinâmico de Correlação Histórica")
     st.write("Selecione um produto específico e um metal de base para avaliar a convergência de preços na linha do tempo:")
     
@@ -366,7 +367,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
         title=f"Evolução Temporal Cruzada: {produto_sel} vs. {metais_opcoes[metal_sel]}",
         xaxis=dict(title="Meses", tickformat="%Y-%m"),
         
-        # Eixo Esquerdo (Hardware)
+        # Eixo Esquerdo (Hardware) - Atualizado para os padrões modernos do Plotly
         yaxis=dict(
             title=dict(
                 text="Preço do Hardware (BRL)",
@@ -375,7 +376,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
             tickfont=dict(color="#1f77b4")
         ),
         
-        # Eixo Direito (Metal)
+        # Eixo Direito (Metal) - Atualizado para os padrões modernos do Plotly
         yaxis2=dict(
             title=dict(
                 text=f"Preço do {metais_opcoes[metal_sel]} (BRL)",
@@ -400,7 +401,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
         * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia reduziram drasticamente a oferta global de silício refinado.
         * **Boom de Computação de IA de Larga Escala:** A busca massiva por chips gráficos aceleradores (GPUs) por gigantes de tecnologia gerou escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
         """)
-    with col_box2:
+    with col_box2: # <--- Perfeitamente corrigido de col_b para col_box2 aqui!
         st.markdown("""
         * **Corrida pela Mineração de Criptoativos:** Durante janelas específicas de alta de moedas digitais proof-of-work, os estoques locais de placas de vídeo foram drenados, distorcendo os preços no ecossistema Buscapé/Zoom.
         * **A Inflação Local e Poder de Compra:** O gráfico comprova que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que impactam o faturamento de montadoras locais.
