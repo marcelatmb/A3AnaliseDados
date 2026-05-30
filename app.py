@@ -215,7 +215,7 @@ if fase_selecionada == "🏠 Visão Geral & Contexto de Negócio":
         ### 🏭 Quais públicos mais dependem destes hardwares?
         1. **Enterprise & Desenvolvedores:** Estações de trabalho profissionais (*Workstations*) focadas em Inteligência Artificial, renderização e processamento massivo de dados.
         2. **Setores de Engenharia, Arquitetura e Design:** Dependem de forte poder computacional gráfico (GPUs de alta performance).
-        3. **Mercado Pro-Gamer e Entusiastas:** Um nicho de consumo de altíssimo valor agregado com alta resiliência a aumentos de preços.
+        3. **Mercado Pro-Gamer e Entusiastas:** Um niche de consumo de altíssimo valor agregado com alta resiliência a aumentos de preços.
         """)
 
 # ==============================================================================
@@ -318,7 +318,7 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
 # ==============================================================================
 # TELA 3: FASE 3 - STORYTELLING & RECOMENDAÇÕES (Foco em Gestores)
 # ==============================================================================
-elif fase_selecionada == "🏠 Visão Geral & Contexto de Negócio" or fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
+elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
     st.title("🎯 Fase 3: Storytelling & Tomada de Decisão")
     st.subheader("Transformando Dados Técnicos em Insights Estratégicos para Gestores")
     
@@ -362,12 +362,11 @@ elif fase_selecionada == "🏠 Visão Geral & Contexto de Negócio" or fase_sele
         line=dict(color="#ff7f0e", width=2, dash="dash"), yaxis="y2"
     ))
     
-# Subjacente ao Simulador Dinâmico na Linha 365:
     fig_super_dual.update_layout(
         title=f"Evolução Temporal Cruzada: {produto_sel} vs. {metais_opcoes[metal_sel]}",
         xaxis=dict(title="Meses", tickformat="%Y-%m"),
         
-        # Eixo Esquerdo (Hardware) - Correção aplicada aqui:
+        # Eixo Esquerdo (Hardware)
         yaxis=dict(
             title=dict(
                 text="Preço do Hardware (BRL)",
@@ -376,7 +375,7 @@ elif fase_selecionada == "🏠 Visão Geral & Contexto de Negócio" or fase_sele
             tickfont=dict(color="#1f77b4")
         ),
         
-        # Eixo Direito (Metal) - Correção aplicada aqui:
+        # Eixo Direito (Metal)
         yaxis2=dict(
             title=dict(
                 text=f"Preço do {metais_opcoes[metal_sel]} (BRL)",
@@ -401,7 +400,7 @@ elif fase_selecionada == "🏠 Visão Geral & Contexto de Negócio" or fase_sele
         * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia reduziram drasticamente a oferta global de silício refinado.
         * **Boom de Computação de IA de Larga Escala:** A busca massiva por chips gráficos aceleradores (GPUs) por gigantes de tecnologia gerou escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
         """)
-    with col_b:
+    with col_box2:
         st.markdown("""
         * **Corrida pela Mineração de Criptoativos:** Durante janelas específicas de alta de moedas digitais proof-of-work, os estoques locais de placas de vídeo foram drenados, distorcendo os preços no ecossistema Buscapé/Zoom.
         * **A Inflação Local e Poder de Compra:** O gráfico comprova que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que impactam o faturamento de montadoras locais.
