@@ -199,6 +199,24 @@ if fase_selecionada == "🏠 Visão Geral & Contexto de Negócio":
     with col4:
         st.markdown(f"<div class='metric-card'><b>Metais Analisados</b><h2>5</h2><small>Alumínio, Cobre, Estanho, Ouro e Prata</small></div>", unsafe_allow_html=True)
 
+    # --------------------------------------------------------------------------
+    # SEÇÃO CORRIGIDA - LINK DO MEIO ATUALIZADO PARA O PORTAL OFICIAL DO IPEADATA (LINK PERMANENTE)
+    # --------------------------------------------------------------------------
+    st.markdown("---")
+    st.markdown("#### 📑 Contextualização Setorial: Reportagens e Eventos de Mercado")
+    st.markdown("""
+    Para enriquecer a análise quantitativa dos dados e entender a correlação entre os preços das commodities e o mercado consumidor de hardware, foram selecionadas reportagens e fatos de mercado fundamentais que contextualizam as flutuações de preços observadas nos datasets:
+
+    * **[Guerra Comercial e Restrições de Metais Críticos (2023-2026)](https://anderseninstitute.org/chinas-export-control-architecture-and-its-use-of-critical-minerals-as-strategic-pressure-points/):**
+        Reportagens recentes apontam que as restrições de exportação impostas pela China sobre metais raros e insumos tecnológicos (como o gálio, germânio e silício de alta pureza), somadas à volatilidade de metais estruturais como o cobre e o alumínio, impactaram diretamente o custo de fabricação de semicondutores. Isso se reflete nos custos de produção de CPUs e GPUs analisados no projeto.
+        
+    * **[Portal de Séries Históricas e Indicadores de Câmbio (IPEADATA)](http://www.ipeadata.gov.br/):**
+        O repositório oficial de dados macroeconômicos do Instituto de Pesquisa Econômica Aplicada (IPEA) documenta a evolução da taxa de câmbio comercial do Real frente ao Dólar, servindo como base estrutural para compreender o fenômeno de repasse cambial nos custos logísticos e de peças eletrônicas importadas.
+
+    * **[O Papel do Ouro e da Prata na Eletrônica de Alta Performance](https://timesbrasil.com.br/investimentos/prata-us50-terras-raras-china-eua/):**
+        Artigos técnicos do setor de mineração e eletrônicos demonstram que, por conta da excelente condutividade e resistência à corrosão, o ouro e a prata são aplicados nas conexões internas de processadores e memórias de alta performance (como DDR5 e SSDs NVMe). O rali de preços desses metais preciosos no mercado internacional atua como um indexador silencioso no preço final dos componentes Premium.
+    """)
+
     st.markdown("---")
     st.subheader("🎯 Mapeamento e Alinhamento Estratégico (O Contexto do Trabalho)")
     
@@ -213,7 +231,7 @@ if fase_selecionada == "🏠 Visão Geral & Contexto de Negócio":
     with col_b:
         st.markdown("""
         ### 🏭 Quais públicos mais dependem destes hardwares?
-        1. **Enterprise & Desenvolvedores:** Estações de trabalho profissionais (*Workstations*) focadas em Inteligência Artificial, renderização e processamento massivo de dados.
+        1. **Enterprise & Desenvolvedores:** Estações de trabalho profissionais (*Workstations*) focadas in Inteligência Artificial, renderização e processamento massivo de dados.
         2. **Setores de Engenharia, Arquitetura e Design:** Dependem de forte poder computacional gráfico (GPUs de alta performance).
         3. **Mercado Pro-Gamer e Entusiastas:** Um nicho de consumo de altíssimo valor adequado com alta resiliência a aumentos de preços.
         """)
@@ -234,7 +252,6 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
 
     with tab_estatistica:
         st.markdown("#### Métricas de Tendência Central e Dispersão por Categoria")
-        # Modificado para Raw String (r"...") para sumir com o SyntaxWarning do terminal
         st.markdown(r"> **Técnica Utilizada:** Agrupamento estatístico computando Média, Mediana, Quartis ($25\%$ e $75\%$) e Desvio Padrão para avaliar o espalhamento dos preços reais praticados.")
         
         # Tabela Descritiva Resumida
@@ -367,7 +384,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
         title=f"Evolução Temporal Cruzada: {produto_sel} vs. {metais_opcoes[metal_sel]}",
         xaxis=dict(title="Meses", tickformat="%Y-%m"),
         
-        # Eixo Esquerdo (Hardware) - Atualizado para os padrões modernos do Plotly
+        # Eixo Esquerdo (Hardware)
         yaxis=dict(
             title=dict(
                 text="Preço do Hardware (BRL)",
@@ -376,7 +393,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
             tickfont=dict(color="#1f77b4")
         ),
         
-        # Eixo Direito (Metal) - Atualizado para os padrões modernos do Plotly
+        # Eixo Direito (Metal)
         yaxis2=dict(
             title=dict(
                 text=f"Preço do {metais_opcoes[metal_sel]} (BRL)",
@@ -401,7 +418,7 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
         * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia reduziram drasticamente a oferta global de silício refinado.
         * **Boom de Computação de IA de Larga Escala:** A busca massiva por chips gráficos aceleradores (GPUs) por gigantes de tecnologia gerou escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
         """)
-    with col_box2: # <--- Perfeitamente corrigido de col_b para col_box2 aqui!
+    with col_box2:
         st.markdown("""
         * **Corrida pela Mineração de Criptoativos:** Durante janelas específicas de alta de moedas digitais proof-of-work, os estoques locais de placas de vídeo foram drenados, distorcendo os preços no ecossistema Buscapé/Zoom.
         * **A Inflação Local e Poder de Compra:** O gráfico comprova que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que impactam o faturamento de montadoras locais.
