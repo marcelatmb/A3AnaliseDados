@@ -246,8 +246,7 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
     # Abas internas para organizar os objetivos da EDA
     tab_estatistica, tab_distribuicao, tab_correlacao = st.tabs([
         "🧮 Estatística Descritiva & Dispersão", 
-        "📉 Distribuição e Anomalias", 
-        "🔗 Correlações e Padrões"
+        "📉 Distribuição e Anomalias"
     ])
 
     with tab_estatistica:
@@ -313,25 +312,6 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
         fig_line.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
         
         st.plotly_chart(fig_line, use_container_width=True)
-
-    with tab_correlacao:
-        st.markdown("#### Matriz de Correlação Linear de Pearson Interativa")
-        
-        df_corr = df_filtrado[["Preco_Medio_BRL_Mes", "USD_Medio_Mes", "Selic_Media_Mes", "Aluminum_BRL", "Copper_BRL", "Gold_BRL"]]
-        matriz_correlacao = df_corr.corr()
-        
-        fig_heatmap = px.imshow(
-            matriz_correlacao, text_auto=".2f", aspect="auto",
-            color_continuous_scale="RdBu_r", zmin=-1, zmax=1
-        )
-        fig_heatmap.update_layout(title="Mapeamento de Força: Hardware vs. Indicadores Econômicos")
-        st.plotly_chart(fig_heatmap, use_container_width=True)
-        
-        st.markdown("""
-        **Análise dos Padrões Identificados:**
-        * Observa-se uma **forte correlação linear positiva** entre o preço médio do hardware e o **câmbio do dólar**, confirmando a alta dependência de componentes importados.
-        * O **Cobre (Copper_BRL)** e o **Alumínio (Aluminum_BRL)** mostram correlações estreitas com a subida geral de preços, sinalizando aumentos simultâneos de custos na cadeia primária global de manufatura de eletrônicos.
-        """)
 
 # ==============================================================================
 # TELA 3: FASE 3 - STORYTELLING & RECOMENDAÇÕES (Foco em Gestores)
@@ -415,13 +395,13 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
     col_box1, col_box2 = st.columns(2)
     with col_box1:
         st.markdown("""
-        * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia reduziram drasticamente a oferta global de silício refinado.
-        * **Boom de Computação de IA de Larga Escala:** A busca massiva por chips gráficos aceleradores (GPUs) por gigantes de tecnologia gerou escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
+        * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia podem ter reduzido drasticamente a oferta global de silício refinado.
+        * **Boom de Computação de IA de Larga Escala:** A busca massiva por memória RAM por gigantes de tecnologia pode ter gerado escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
         """)
     with col_box2:
         st.markdown("""
-        * **Corrida pela Mineração de Criptoativos:** Durante janelas específicas de alta de moedas digitais proof-of-work, os estoques locais de placas de vídeo foram drenados, distorcendo os preços no ecossistema Buscapé/Zoom.
-        * **A Inflação Local e Poder de Compra:** O gráfico comprova que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que impactam o faturamento de montadoras locais.
+        * **Corrida pela Mineração de Criptoativos:** O boom da mineração de diferentes tipos de criptomoedas pode ter aumentado a demanda por placas de vídeo em certas janelas de tempo registradas.
+        * **A Inflação Local e Poder de Compra:** O gráfico demonstra que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que podem impactar o faturamento.
         """)
 
     # Recomendações Finais (Fase 3 - Resultado Final)
