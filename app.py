@@ -415,13 +415,13 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
     col_box1, col_box2 = st.columns(2)
     with col_box1:
         st.markdown("""
-        * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia reduziram drasticamente a oferta global de silício refinado.
-        * **Boom de Computação de IA de Larga Escala:** A busca massiva por chips gráficos aceleradores (GPUs) por gigantes de tecnologia gerou escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
+        * **A Crise dos Semicondutores e Logística Pós-Pandemia:** Gargalos severos de logística internacional e paralisações em fundições chave na Ásia podem ter reduzido drasticamente a oferta global de silício refinado.
+        * **Boom de Computação de IA de Larga Escala:** A busca massiva por chips gráficos aceleradores (GPUs) por gigantes de tecnologia pode ter gerado escassez crônica e canibalização da capacidade produtiva global, elevando preços de componentes de consumo padrão.
         """)
     with col_box2:
         st.markdown("""
-        * **Corrida pela Mineração de Criptoativos:** Durante janelas específicas de alta de moedas digitais proof-of-work, os estoques locais de placas de vídeo foram drenados, distorcendo os preços no ecossistema Buscapé/Zoom.
-        * **A Inflação Local e Poder de Compra:** O gráfico comprova que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que impactam o faturamento de montadoras locais.
+        * **Corrida pela Mineração de Criptoativos:** O boom da mineração de diferentes tipos de criptomoedas pode ter aumentado a demanda por placas de vídeo em certas janelas de tempo registradas.
+        * **A Inflação Local e Poder de Compra:** O gráfico demonstra que o distanciamento entre o salário mínimo nacional e a média de preços de categorias intermediárias/premium cria barreiras de consumo que podem impactar o faturamento.
         """)
 
     # Recomendações Finais (Fase 3 - Resultado Final)
