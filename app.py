@@ -244,7 +244,7 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
     st.markdown("### Métodos, Técnicas e Comportamento Estatístico da Base")
 
     # Abas internas para organizar os objetivos da EDA
-    tab_estatistica, tab_distribuicao, tab_correlacao = st.tabs([
+    tab_estatistica, tab_distribuicao = st.tabs([
         "🧮 Estatística Descritiva & Dispersão", 
         "📉 Distribuição e Anomalias"
     ])
