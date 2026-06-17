@@ -246,8 +246,7 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
     # Abas internas para organizar os objetivos da EDA
     tab_estatistica, tab_distribuicao, tab_correlacao = st.tabs([
         "🧮 Estatística Descritiva & Dispersão", 
-        "📉 Distribuição e Anomalias", 
-        "🔗 Correlações e Padrões"
+        "📉 Distribuição e Anomalias"
     ])
 
     with tab_estatistica:
@@ -313,25 +312,6 @@ elif fase_selecionada == "📊 Fase 2: Análise Exploratória (EDA)":
         fig_line.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
         
         st.plotly_chart(fig_line, use_container_width=True)
-
-    with tab_correlacao:
-        st.markdown("#### Matriz de Correlação Linear de Pearson Interativa")
-        
-        df_corr = df_filtrado[["Preco_Medio_BRL_Mes", "USD_Medio_Mes", "Selic_Media_Mes", "Aluminum_BRL", "Copper_BRL", "Gold_BRL"]]
-        matriz_correlacao = df_corr.corr()
-        
-        fig_heatmap = px.imshow(
-            matriz_correlacao, text_auto=".2f", aspect="auto",
-            color_continuous_scale="RdBu_r", zmin=-1, zmax=1
-        )
-        fig_heatmap.update_layout(title="Mapeamento de Força: Hardware vs. Indicadores Econômicos")
-        st.plotly_chart(fig_heatmap, use_container_width=True)
-        
-        st.markdown("""
-        **Análise dos Padrões Identificados:**
-        * Observa-se uma **forte correlação linear positiva** entre o preço médio do hardware e o **câmbio do dólar**, confirmando a alta dependência de componentes importados.
-        * O **Cobre (Copper_BRL)** e o **Alumínio (Aluminum_BRL)** mostram correlações estreitas com a subida geral de preços, sinalizando aumentos simultâneos de custos na cadeia primária global de manufatura de eletrônicos.
-        """)
 
 # ==============================================================================
 # TELA 3: FASE 3 - STORYTELLING & RECOMENDAÇÕES (Foco em Gestores)
@@ -430,5 +410,5 @@ elif fase_selecionada == "🎯 Fase 3: Storytelling & Decisões":
     st.info("""
     1. **Estratégia de Hedge Cambial:** Varejistas e importadores devem adotar mecanismos de proteção financeira (*hedge*) baseados na volatilidade do Dólar e contratos futuros de metais industriais para mitigar reajustes abruptos.
     2. **Diversificação de Portfólio por Faixa de Custo:** Gestores de estoque devem balancear as compras aumentando a fatia de itens de 'Baixo custo' em cenários de subida simultânea do cobre e do dólar, mantendo o giro de capital estável.
-    3. **Previsibilidade de Demanda via Monitoramento Externo:** Integrar dados de plataformas como o World Bank diretamente aos sistemas corporativos de ERP permite antecipar alterações de preços em até 45 dias antes de chegarem ao mercado nacional.
+    3. **Previsibilidade de Demanda via Monitoramento Externo:** Integrar dados de plataformas como o World Bank diretamente aos sistemas corporativos de ERP permite antecipar alterações de preços antes de chegarem ao mercado nacional.
     """)
